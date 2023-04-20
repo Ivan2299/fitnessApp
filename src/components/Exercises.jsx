@@ -3,8 +3,8 @@ import Pagination from '@mui/material/Pagination';
 import { Box, Stack, Typography } from '@mui/material';
 
 import { exerciseOptions, fetchData } from '../utils/fetchData';
-import ExerciseCard from './ExerciseCard';
-import Loader from './Loader';
+import { ExerciseCard } from './';
+import { Loader } from './';
 
 const Exercises = ({ exercises, setExercises, bodyPart }) => {
 	const [currentPage, setCurrentPage] = useState(1);
@@ -35,7 +35,7 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
 	// Pagination
 	const indexOfLastExercise = currentPage * exercisesPerPage;
 	const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
-	const currentExercises = [exercises].slice(indexOfFirstExercise, indexOfLastExercise);
+	const currentExercises = exercises.slice(indexOfFirstExercise, indexOfLastExercise);
 
 	const paginate = (event, value) => {
 		setCurrentPage(value);
