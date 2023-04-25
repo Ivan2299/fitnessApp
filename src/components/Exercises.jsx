@@ -8,7 +8,7 @@ import { Loader } from './';
 
 const Exercises = ({ exercises, setExercises, bodyPart }) => {
 	const [currentPage, setCurrentPage] = useState(1);
-	const [exercisesPerPage] = useState(6);
+	const [exercisesPerPage] = useState(9);
 
 	useEffect(() => {
 		const fetchExercisesData = async () => {
